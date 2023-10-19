@@ -1,12 +1,12 @@
 <script setup lang="ts">
 
-import type {Product} from '@/model/types'
+import type {ProductWithQuantity} from '@/model/types'
 import Counter from '@/components/buy-card/counter.vue'
 import {useProductStore} from '@/stores/product'
 import UiDeleteSvg from "@/components/svg/ui-delete-svg.vue";
 
 defineProps<{
-  product: Product
+  product: ProductWithQuantity
 }>()
 
 const store = useProductStore()

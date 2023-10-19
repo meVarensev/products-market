@@ -1,13 +1,13 @@
 import {computed, ref} from 'vue'
 import {defineStore} from 'pinia'
-import type {ProductWithQuantity} from '@/model/types'
+import type {Product, ProductWithQuantity} from '@/model/types'
 import {findProductById} from "@/utils/find-product-by-id";
 
 
 export const useProductStore = defineStore('product', () => {
     const products = ref<ProductWithQuantity[]>([])
 
-    function addProduct(product: ProductWithQuantity): void {
+    function addProduct(product: Product): void {
         const existingProduct = findProductById(products, product.id)
 
         if (!existingProduct) {
